@@ -1,0 +1,1247 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Freeverse Freelancing Club</title>  
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>  <body>  <header class="navbar">  
+<div class="nav-container">  <a href="#home" class="logo">FREEVERSE</a>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+<nav id="navMenu">  
+<a href="#home">Home</a>  
+<a href="#about">About</a>  
+<a href="#events">Events</a>  
+<a href="#gallery">Gallery</a>  
+<a href="#freelancers">Freelancers</a>  
+<a href="#coordinators">Coordinators</a>  
+</nav>  <div class="nav-actions">  
+<button class="nav-btn" onclick="openLogin()">Sign In</button>  
+<button class="nav-btn register-btn" onclick="openRegister()">Register</button>  
+</div>  </div>  
+</header>  <!-- HOME -->  <section class="hero" id="home">  <div class="hero-content reveal">  <p class="small-title">FREEVERSE FREELANCING CLUB</p>  <h1>  
+Turn Skills Into  
+<span>Opportunities.</span>  
+</h1>  <p class="hero-text">  
+A student-powered community where creativity, technology and freelancing come together.  
+</p>  <div class="hero-buttons">  
+<button class="primary-btn" onclick="joinFreeverse()">Join Freeverse</button>  
+<a href="#about" class="secondary-btn">Explore Club</a>  
+</div>  </div>  <div class="hero-highlights reveal">  <div>  
+<strong data-count="50">0+</strong>  
+<span>Student Members</span>  
+</div>  <div>  
+<strong data-count="12">0+</strong>  
+<span>Events</span>  
+</div>  <div>  
+<strong data-count="4">0+</strong>  
+<span>Freelancers</span>  
+</div>  <div>  
+<strong data-count="29">0+</strong>  
+<span>Projects</span>  
+</div>  </div>  </section>  <!-- ABOUT -->  <section class="section about" id="about">  <div class="section-heading reveal">  <p>ABOUT FREEVERSE</p>  <h2>  
+Build Skills.  
+<span>Build Your Future.</span>  
+</h2>  </div>  <p class="section-intro reveal">  
+Freeverse Freelancing Club helps students develop practical skills,  
+creative confidence and professional opportunities through learning,  
+events and collaboration.  
+</p>  <div class="about-grid">  <div class="about-card reveal">  <div class="card-icon">🎯</div>  <h3>Vision & Mission</h3>  <p>  
+Our vision is to create a student community where every learner can  
+discover their talent, develop practical skills and confidently explore  
+freelancing and professional opportunities.  
+</p>  </div>  <div class="about-card reveal">  <div class="card-icon">🚀</div>  <h3>Objectives</h3>  <p>  
+Develop technical and creative skills, encourage project-based learning,  
+promote teamwork and provide students with opportunities to showcase  
+their work.  
+</p>  </div>  <div class="about-card reveal">  <div class="card-icon">⭐</div>  <h3>Why Students Should Join</h3>  <p>  
+Students can learn from workshops, participate in competitions,  
+connect with skilled peers, build portfolios and gain experience  
+that supports future careers.  
+</p>  </div>  </div>  </section>  <!-- EVENTS -->  <section class="section events" id="events">  <div class="section-heading reveal">  <p>EVENTS & ACTIVITIES</p>  <h2>  
+Learn.  
+<span>Compete. Create.</span>  
+</h2>  </div>  <p class="section-intro reveal">  
+Freeverse conducts technical and non-technical activities that help  
+students learn practical skills and showcase their creativity.  
+</p>  <!-- EVENT FILTERS -->  <div class="event-filters reveal">  <button class="filter-btn active" onclick="filterEvents('all',this)">  
+All  
+</button>  <button class="filter-btn" onclick="filterEvents('workshop',this)">  
+Workshops  
+</button>  <button class="filter-btn" onclick="filterEvents('competition',this)">  
+Competitions  
+</button>  <button class="filter-btn" onclick="filterEvents('seminar',this)">  
+Seminars  
+</button>  <button class="filter-btn" onclick="filterEvents('technical',this)">  
+Technical  
+</button>  </div>  <div class="event-grid">  <div class="event-card event-item workshop reveal">  <div class="event-icon">🛠️</div>  <h3>Workshops</h3>  <p>  
+Hands-on workshops help students learn practical technologies,  
+freelancing skills and project development.  
+</p>  <button onclick="showEventDetails('workshop')">  
+View Details  
+</button>  </div>  <div class="event-card event-item competition reveal">  <div class="event-icon">🏆</div>  <h3>Competitions</h3>  <p>  
+Competitions encourage creativity, problem solving, teamwork and  
+technical innovation.  
+</p>  <button onclick="showEventDetails('competition')">  
+View Details  
+</button>  </div>  <div class="event-card event-item seminar reveal">  <div class="event-icon">🎤</div>  <h3>Seminars</h3>  <p>  
+Seminars introduce students to industry trends, career development  
+and freelancing opportunities.  
+</p>  <button onclick="showEventDetails('seminar')">  
+View Details  
+</button>  </div>  <div class="event-card event-item technical reveal">  <div class="event-icon">💡</div>  <h3>Technical & Non-Technical Events</h3>  <p>  
+Coding, design, communication and creative activities help students  
+develop a balanced professional skill set.  
+</p>  <button onclick="showEventDetails('technical')">  
+View Details  
+</button>  </div>  </div>  </section>  <!-- GALLERY -->  <section class="section gallery" id="gallery">  <div class="section-heading reveal">  <p>PAST EVENTS</p>  <h2>  
+Our Event  
+<span>Gallery.</span>  
+</h2>  </div>  <p class="section-intro reveal">  
+A glimpse of previous Freeverse activities and student participation.  
+Click any photo to view it larger.  
+</p>  <!-- DIGITAL MARKETING -->  <div class="gallery-event reveal">  <h3>Digital Marketing Guidance</h3>  <div class="poster-box">  <img
+src="{{ url_for('static', filename='images/Digital Marketing Poster.jpeg') }}"
+class="poster-img"
+alt="Digital Marketing Guidance Poster"
+
+> 
+
+<div class="photo-row">  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/digital1.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Digital Marketing Event Photo 1"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/digital2.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Digital Marketing Event Photo 2"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/digital3.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Digital Marketing Event Photo 3"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/digital4.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Digital Marketing Event Photo 4"  
+>  
+</div>  </div>  </div>  </div>  <!-- LOGO CREATION -->  <div class="gallery-event reveal">  <h3>Logo Creation</h3>  <div class="poster-box">  <img
+src="{{ url_for('static', filename='images/logo poster.jpeg') }}"
+class="poster-img"
+alt="Logo Creation Poster"
+
+> 
+
+<div class="photo-row">  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/logo1.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Logo Creation Event Photo 1"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/logo2.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Logo Creation Event Photo 2"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/logo3.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Logo Creation Event Photo 3"  
+>  
+</div>  <div class="photo-box">  
+<img  
+src="{{ url_for('static', filename='images/logo4.jpg.jpeg') }}"  
+class="zoomable"  
+alt="Logo Creation Event Photo 4"  
+>  
+</div>  </div>  </div>  </div>  </section> <!-- NEWS & UPDATES -->
+<section class="section news-section" id="news">
+  <div class="section-title">
+    <span>Stay Updated</span>
+    <h2>FREEVERSE News & Updates</h2>
+    <p>Latest announcements, achievements and activities from our club.</p>
+  </div>
+
+  <div class="news-filters">
+    <button class="news-filter active" onclick="filterNews('all',this)">All</button>
+    <button class="news-filter" onclick="filterNews('announcement',this)">Announcements</button>
+    <button class="news-filter" onclick="filterNews('event',this)">Events</button>
+    <button class="news-filter" onclick="filterNews('achievement',this)">Achievements</button>
+    <button class="news-filter" onclick="filterNews('spotlight',this)">Student Spotlight</button>
+  </div>
+
+  <div class="news-grid" id="newsGrid"></div>
+</section> <!-- COORDINATOR LOGIN -->
+<section class="section coordinator-login-section" id="coordinator-login">
+  <div class="section-title">
+    <span>Authorized Access</span>
+    <h2>Coordinator Login</h2>
+    <p>Authorized FREEVERSE coordinators can sign in to manage club updates.</p>
+  </div>
+
+  <div class="coordinator-login-card">
+
+    <div class="login-icon">🔐</div>
+
+    <h3>FREEVERSE Coordinator</h3>
+    <p class="login-info">
+      Sign in with your authorized coordinator account.
+    </p>
+
+    <form id="coordinatorLoginForm">
+
+      <div class="form-group">
+        <label for="coordinatorEmail">Email Address</label>
+        <input
+          type="email"
+          id="coordinatorEmail"
+          placeholder="Enter coordinator email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="coordinatorPassword">Password</label>
+        <input
+          type="password"
+          id="coordinatorPassword"
+          placeholder="Enter password"
+          required
+        >
+      </div>
+
+      <button type="submit" class="coordinator-login-btn">
+        Sign In as Coordinator
+      </button>
+
+      <div id="coordinatorLoginMessage"
+           class="coordinator-login-message">
+      </div>
+
+    </form>
+
+  </div>
+</section> <!-- COORDINATOR POST PANEL -->
+<section class="section coordinator-post-section" id="coordinator-post">
+  <div class="section-title">
+    <span>Club Management</span>
+    <h2>Coordinator Post Panel</h2>
+    <p>Manage announcements, events and important FREEVERSE updates.</p>
+  </div>
+
+  <div class="post-panel">
+    <div class="post-panel-header">
+      <div>
+        <h3>Create a Club Update</h3>
+        <p>Only authorized coordinators should use this panel.</p>
+      </div>
+      <span class="admin-badge">Coordinator</span>
+    </div>
+
+    <form id="newsPostForm">
+
+      <div class="post-form-grid">
+
+        <div class="form-group">
+          <label for="postTitle">Post Title</label>
+          <input
+            type="text"
+            id="postTitle"
+            placeholder="Enter update title"
+            required
+          >
+        </div>
+        <div class="form-group post-image-group">
+  <label for="postImage">Event Poster / Photo</label>
+
+  <div class="image-upload-box">
+    <input
+      type="file"
+      id="postImage"
+      accept="image/png,image/jpeg,image/jpg,image/webp"
+    >
+
+    <div class="upload-icon">📷</div>
+
+    <strong>Upload Poster or Photo</strong>
+
+    <span>PNG, JPG or WEBP • Recommended for event posters</span>
+  </div>
+
+  <div id="imagePreview" class="image-preview"></div>
+</div>
+
+        <div class="form-group">
+          <label for="postType">Category</label>
+          <select id="postType" required>
+            <option value="">Select Category</option>
+            <option value="announcement">Announcement</option>
+            <option value="event">Event</option>
+            <option value="achievement">Achievement</option>
+            <option value="spotlight">Student Spotlight</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="postDescription">Description</label>
+        <textarea
+          id="postDescription"
+          rows="5"
+          placeholder="Write your FREEVERSE update..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="post-form-actions">
+        <button type="submit" class="news-read">
+          Publish Update
+        </button>
+      </div>
+
+      <div id="postSuccess" class="post-success">
+        ✓ Update published successfully!
+      </div>
+
+    </form>
+  </div>
+</section> <!-- FREELANCERS -->  <section class="section freelancers" id="freelancers">  <div class="section-heading reveal">  <p>FREELANCER SHOWCASE</p>  <h2>  
+Student  
+<span>Freelancers.</span>  
+</h2>  </div>  <p class="section-intro reveal">  
+Explore sample student freelancer profiles representing the skills  
+available within the Freeverse community.  
+</p>  <!-- FREELANCER SEARCH -->  <div class="freelancer-search reveal">  <input
+type="text"
+id="freelancerSearch"
+placeholder="Search by name, role or skill..."
+oninput="searchFreelancers()"
+
+> 
+
+<button onclick="clearFreelancerSearch()">  
+Clear  
+</button>  </div>  <div class="freelancer-grid" id="freelancerGrid">  <!-- ARUN -->  <div class="freelancer-card freelancer-item reveal"  
+data-search="arun kumar web developer html css javascript flask web">  <span class="sample-badge">SAMPLE PROFILE</span>
+
+<div class="profile-circle">AK</div>  <h3>Arun Kumar</h3>  <p class="role">Web Developer</p>  <div class="skills">  
+<span>HTML</span>  
+<span>CSS</span>  
+<span>JavaScript</span>  
+<span>Flask</span>  
+</div>  <p>  
+8 completed projects  
+</p>  <button onclick="showProfile('arun')">  
+View Profile  
+</button>  </div>  <!-- PRIYA -->  <div class="freelancer-card freelancer-item reveal"  
+data-search="priya n ui ux designer figma canva design">  <span class="sample-badge">SAMPLE PROFILE</span>
+
+<div class="profile-circle">PN</div>  <h3>Priya N</h3>  <p class="role">UI/UX Designer</p>  <div class="skills">  
+<span>Figma</span>  
+<span>UI/UX</span>  
+<span>Canva</span>  
+</div>  <p>  
+6 completed projects  
+</p>  <button onclick="showProfile('priya')">  
+View Profile  
+</button>  </div>  <!-- KAVIN -->  <div class="freelancer-card freelancer-item reveal"  
+data-search="kavin r ai ml developer python ai machine learning data">  <span class="sample-badge">SAMPLE PROFILE</span>
+
+<div class="profile-circle">KR</div>  <h3>Kavin R</h3>  <p class="role">AI & ML Developer</p>  <div class="skills">  
+<span>Python</span>  
+<span>AI</span>  
+<span>ML</span>  
+<span>Data</span>  
+</div>  <p>  
+5 completed projects  
+</p>  <button onclick="showProfile('kavin')">  
+View Profile  
+</button>  </div>  <!-- MEERA -->  <div class="freelancer-card freelancer-item reveal"  
+data-search="meera s graphic video editor canva branding design">  <span class="sample-badge">SAMPLE PROFILE</span>
+
+<div class="profile-circle">MS</div>  <h3>Meera S</h3>  <p class="role">Graphic & Video Editor</p>  <div class="skills">  
+<span>Graphic Design</span>  
+<span>Video Editing</span>  
+<span>Canva</span>  
+<span>Branding</span>  
+</div>  <p>  
+10 completed projects  
+</p>  <button onclick="showProfile('meera')">  
+View Profile  
+</button>  </div>  </div>  <div id="noFreelancers" class="no-results">  
+No freelancer profiles found.  
+</div>  </section>  
+
+<!-- NEW INTERACTIVE FEATURES -->
+<section class="section new-tools" id="freelance-path">
+
+<div class="section-heading reveal">
+<p>INTERACTIVE TOOLS</p>
+<h2>Find Your <span>Freelancing Path.</span></h2>
+</div>
+
+<p class="section-intro reveal">
+Discover your interests, explore student projects and find skills you can build for freelancing.
+</p>
+
+<div class="new-tool-grid">
+
+<!-- FEATURE 1 : FREELANCING PATH QUIZ -->
+<div class="new-tool-card reveal">
+<div class="new-tool-icon">🎯</div>
+<h3>Find Your Freelancing Path</h3>
+<p class="new-tool-description">
+Answer three quick questions and discover a freelancing path that matches your interests.
+</p>
+
+<div class="quiz-box" id="freeverseQuiz">
+
+<div class="quiz-top">
+<span id="quizStep">Question 1 of 3</span>
+<strong>🎯 Mini Quiz</strong>
+</div>
+
+<h4 id="quizQuestion"></h4>
+
+<div id="quizOptions" class="quiz-options"></div>
+
+<button type="button" class="new-action" id="quizNext" onclick="nextPathQuestion()">
+Next
+</button>
+
+<div id="quizResult" class="quiz-result"></div>
+
+</div>
+</div>
+
+
+<!-- FEATURE 2 : PROJECT SHOWCASE -->
+<div class="new-tool-card reveal">
+<div class="new-tool-icon">💡</div>
+<h3>Featured Student Projects</h3>
+
+<p class="new-tool-description">
+Explore demonstration projects representing different skills available in the Freeverse community.
+</p>
+
+<div class="project-grid">
+
+<button class="project-card" onclick="showFeaturedProject('arun')">
+<strong>🌐</strong>
+<span>Freeverse Club Portal</span>
+<small>Web Development</small>
+</button>
+
+<button class="project-card" onclick="showFeaturedProject('priya')">
+<strong>🎨</strong>
+<span>Student Event App UI</span>
+<small>UI/UX Design</small>
+</button>
+
+<button class="project-card" onclick="showFeaturedProject('kavin')">
+<strong>🤖</strong>
+<span>AI Study Assistant</span>
+<small>AI & ML</small>
+</button>
+
+<button class="project-card" onclick="showFeaturedProject('meera')">
+<strong>🎬</strong>
+<span>Freeverse Brand Reel</span>
+<small>Video & Content</small>
+</button>
+
+</div>
+
+<div id="featuredProjectDetails" class="project-detail">
+Select a project to view its details.
+</div>
+
+</div>
+
+
+<!-- FEATURE 3 : SKILL EXPLORER -->
+<div class="new-tool-card wide reveal">
+<div class="new-tool-icon">🚀</div>
+
+<h3>Skill Explorer</h3>
+
+<p class="new-tool-description">
+Choose a skill to discover what you can learn, practice and offer as a freelancer.
+</p>
+
+<div class="skill-buttons">
+
+<button class="skill-btn active" onclick="exploreSkill('web',this)">
+Web Development
+</button>
+
+<button class="skill-btn" onclick="exploreSkill('uiux',this)">
+UI/UX
+</button>
+
+<button class="skill-btn" onclick="exploreSkill('graphic',this)">
+Graphic Design
+</button>
+
+<button class="skill-btn" onclick="exploreSkill('video',this)">
+Video Editing
+</button>
+
+<button class="skill-btn" onclick="exploreSkill('ai',this)">
+AI & ML
+</button>
+
+<button class="skill-btn" onclick="exploreSkill('app',this)">
+App Development
+</button>
+
+</div>
+
+<div id="skillDetails" class="skill-detail"></div>
+
+</div>
+
+</div>
+</section><!-- FEATURED FREELANCER -->
+<section class="section featured-freelancer-section" id="featured-freelancer">
+
+<div class="section-heading reveal">
+<p>WEEKLY SPOTLIGHT</p>
+<h2>Featured <span>Freelancer.</span></h2>
+</div>
+
+<p class="section-intro reveal">
+Meet a student freelancer from the Freeverse community and explore their skills, projects and specializations.
+</p>
+
+<div class="featured-freelancer-card reveal">
+
+<div class="featured-label">
+⭐ FREELANCER OF THE WEEK
+</div>
+
+<div class="featured-profile">
+
+<div class="featured-avatar" id="featuredAvatar">
+AK
+</div>
+
+<div class="featured-info">
+
+<h3 id="featuredName">
+Arun Kumar
+</h3>
+
+<p class="featured-role" id="featuredRole">
+Web Developer
+</p>
+
+<p class="featured-description" id="featuredDescription">
+Building responsive websites and turning ideas into useful digital experiences.
+</p>
+
+<div class="featured-badges" id="featuredBadges">
+</div>
+
+<div class="featured-stats">
+
+<div>
+<strong id="featuredProjects">8</strong>
+<span>Projects</span>
+</div>
+
+<div>
+<strong id="featuredSkillCount">4</strong>
+<span>Skills</span>
+</div>
+
+</div>
+
+<div class="featured-actions">
+
+<button
+type="button"
+class="featured-primary"
+id="featuredProfileBtn"
+onclick="openFeaturedProfile()">
+View Full Profile
+</button>
+
+<button
+type="button"
+class="featured-secondary"
+onclick="nextFeaturedFreelancer()">
+Next Freelancer →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<p class="featured-demo-note">
+Demo showcase profile for the Freeverse website.
+</p>
+
+</div>
+
+</section><!-- STUDENT FREELANCER REGISTRATION -->
+<section class="section freelancer-register-section" id="freelancer-register">
+
+  <div class="section-title">
+    <span>Join the Freelancer Network</span>
+    <h2>Create Your Freelancer Profile</h2>
+    <p>
+      Students can submit their skills, projects and portfolio.
+      Profiles will be reviewed by FREEVERSE coordinators before publishing.
+    </p>
+  </div>
+
+  <div class="freelancer-register-card">
+
+    <div class="freelancer-register-header">
+      <div class="register-icon">💼</div>
+
+      <div>
+        <h3>Student Freelancer Registration</h3>
+        <p>
+          Showcase your skills and projects through FREEVERSE.
+        </p>
+      </div>
+    </div>
+
+    <form id="freelancerRegisterForm">
+
+      <div class="freelancer-form-grid">
+
+        <div class="form-group">
+          <label for="freelancerName">
+            Student Name
+          </label>
+
+          <input
+            type="text"
+            id="freelancerName"
+            placeholder="Enter your full name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="freelancerYear">
+            Year
+          </label>
+
+          <select id="freelancerYear" required>
+            <option value="">Select Year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="freelancerDepartment">
+            Department
+          </label>
+
+          <input
+            type="text"
+            id="freelancerDepartment"
+            placeholder="Example: CSE (AI&ML)"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="freelancerRole">
+            Freelancer Role
+          </label>
+
+          <select id="freelancerRole" required>
+            <option value="">Select Role</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="UI/UX Designer">UI/UX Designer</option>
+            <option value="Graphic Designer">Graphic Designer</option>
+            <option value="Video Editor">Video Editor</option>
+            <option value="AI/ML Developer">AI/ML Developer</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="Content Creator">Content Creator</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="freelancerSkills">
+          Skills
+        </label>
+
+        <input
+          type="text"
+          id="freelancerSkills"
+          placeholder="Example: HTML, CSS, JavaScript, Python"
+          required
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="freelancerProjects">
+          Projects
+        </label>
+
+        <textarea
+          id="freelancerProjects"
+          rows="4"
+          placeholder="Describe your projects..."
+          required
+        ></textarea>
+
+      </div>
+
+      <div class="freelancer-form-grid">
+
+        <div class="form-group">
+
+          <label for="freelancerEmail">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="freelancerEmail"
+            placeholder="yourname@example.com"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="freelancerLinkedin">
+            LinkedIn Profile
+          </label>
+
+          <input
+            type="url"
+            id="freelancerLinkedin"
+            placeholder="https://linkedin.com/in/yourname"
+          >
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="freelancerPortfolio">
+          Portfolio Website
+        </label>
+
+        <input
+          type="url"
+          id="freelancerPortfolio"
+          placeholder="https://yourportfolio.com"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="freelancerImage">
+          Profile Photo
+        </label>
+
+        <input
+          type="file"
+          id="freelancerImage"
+          accept="image/png,image/jpeg,image/jpg,image/webp"
+        >
+
+        <small>
+          JPG, PNG or WEBP
+        </small>
+
+      </div>
+
+      <button
+        type="submit"
+        class="freelancer-submit-btn"
+      >
+        Submit Freelancer Profile
+      </button>
+
+      <div
+        id="freelancerRegisterMessage"
+        class="freelancer-register-message"
+      ></div>
+
+    </form>
+
+  </div>
+
+</section>
+<!-- FREELANCE OPPORTUNITIES -->
+<section class="section opportunity-section" id="opportunities">
+
+<div class="section-heading reveal">
+<p>FREELANCE OPPORTUNITIES</p>
+<h2>Find Your <span>Next Opportunity.</span></h2>
+</div>
+
+<p class="section-intro reveal">
+Explore sample opportunities and discover the skills needed to start building real freelance experience.
+</p>
+
+<div class="opportunity-filters reveal">
+<button class="opportunity-filter active" onclick="filterOpportunities('all',this)">All</button>
+<button class="opportunity-filter" onclick="filterOpportunities('web',this)">Web</button>
+<button class="opportunity-filter" onclick="filterOpportunities('design',this)">Design</button>
+<button class="opportunity-filter" onclick="filterOpportunities('ai',this)">AI</button>
+<button class="opportunity-filter" onclick="filterOpportunities('video',this)">Video</button>
+</div>
+
+<div class="opportunity-grid">
+
+<div class="opportunity-card opportunity-web reveal">
+<span class="opportunity-type">WEB DEVELOPMENT</span>
+<h3>Student Portfolio Website</h3>
+<p>Create a responsive portfolio website for a student to showcase skills, projects and achievements.</p>
+<div class="opportunity-info">
+<span>💻 HTML • CSS • JS</span>
+<span>🟢 Beginner</span>
+</div>
+<button onclick="showOpportunity('portfolio')">View Opportunity</button>
+</div>
+
+<div class="opportunity-card opportunity-design reveal">
+<span class="opportunity-type">UI/UX DESIGN</span>
+<h3>College Event App UI</h3>
+<p>Design a clean mobile interface for students to discover workshops, competitions and events.</p>
+<div class="opportunity-info">
+<span>🎨 Figma • UI/UX</span>
+<span>🟡 Intermediate</span>
+</div>
+<button onclick="showOpportunity('eventui')">View Opportunity</button>
+</div>
+
+<div class="opportunity-card opportunity-ai reveal">
+<span class="opportunity-type">AI & ML</span>
+<h3>Student Data Dashboard</h3>
+<p>Create an AI or data-based dashboard that helps students understand useful academic information.</p>
+<div class="opportunity-info">
+<span>🤖 Python • AI</span>
+<span>🟡 Intermediate</span>
+</div>
+<button onclick="showOpportunity('dashboard')">View Opportunity</button>
+</div>
+
+<div class="opportunity-card opportunity-video reveal">
+<span class="opportunity-type">VIDEO & CONTENT</span>
+<h3>Event Promotion Reel</h3>
+<p>Create a short promotional video for a Freeverse event using creative editing and storytelling.</p>
+<div class="opportunity-info">
+<span>🎬 Editing • Canva</span>
+<span>🟢 Beginner</span>
+</div>
+<button onclick="showOpportunity('reel')">View Opportunity</button>
+</div>
+
+</div>
+
+<div id="opportunityDetails" class="opportunity-details">
+Select an opportunity to see more details.
+</div>
+
+</section>
+
+
+<!-- FREELANCING READINESS -->
+<section class="section readiness-section" id="readiness">
+
+<div class="section-heading reveal">
+<p>FREELANCING JOURNEY</p>
+<h2>Check Your <span>Freelancing Readiness.</span></h2>
+</div>
+
+<p class="section-intro reveal">
+Answer four quick questions and understand which areas you can improve before starting freelance work.
+</p>
+
+<div class="readiness-card reveal">
+
+<div class="readiness-question" id="readinessQuestion">
+Do you have at least one practical skill?
+</div>
+
+<div class="readiness-options" id="readinessOptions">
+
+<button onclick="selectReadiness(20,this)">Yes</button>
+<button onclick="selectReadiness(0,this)">Not Yet</button>
+
+</div>
+
+<button class="readiness-next" onclick="nextReadinessQuestion()">
+Next
+</button>
+
+<div id="readinessResult" class="readiness-result"></div>
+
+</div>
+
+</section>
+
+
+<!-- COORDINATORS -->
+<section class="section coordinators" id="coordinators">  <div class="section-heading reveal">  <p>OUR TEAM</p>  <h2>  
+Student  
+<span>Coordinators.</span>  
+</h2>  </div>  <p class="section-intro reveal">  
+Meet the student coordinators who support and organize Freeverse  
+activities.  
+</p>  <div class="coordinator-grid">  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator1.jpg') }}"
+alt="Bhavadharani S"
+
+> 
+
+<h3>Bhavadharani S</h3>  <p>3rd Year • CSE</p>  <strong>President</strong>
+
+</div>  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator2.jpg') }}"
+alt="Keerthana B"
+
+> 
+
+<h3>Keerthana B</h3>  <p>2nd Year • EEE</p>  <strong>Vice President</strong>
+
+</div>  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator3.jpg') }}"
+alt="Nevitha SV"
+
+> 
+
+<h3>Nevitha SV</h3>  <p>3rd Year • ECE</p>  <strong>Secretary</strong>
+
+</div>  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator4.jpg') }}"
+alt="Vaishnav MN"
+
+> 
+
+<h3>Vaishnav MN</h3>  <p>2nd Year • CSE (AI&ML)</p>  <strong>Joint Secretary</strong>
+
+</div>  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator5.jpg') }}"
+alt="Dayanithi N"
+
+> 
+
+<h3>Dayanithi N</h3>  <p>3rd Year • ECE</p>  <strong>Treasurer</strong>
+
+</div>  <div class="coordinator-card reveal">  <img
+src="{{ url_for('static', filename='images/coordinator6.jpg') }}"
+alt="Kavya Shri G"
+
+> 
+
+<h3>Kavya Shri G</h3>  <p>2nd Year • CSE (AI&ML)</p>  <strong>Assistant Treasurer</strong>
+
+</div>  </div> </section>
+<!-- JOIN -->
+<section class="join-section">  <div class="join-content reveal">  <p>READY TO GET STARTED?</p>  <h2>  
+Join <span>Freeverse.</span>  
+</h2>  <p>  
+Learn new skills, meet talented students and turn your ideas  
+into real opportunities.  
+</p>  <button class="primary-btn" onclick="joinFreeverse()">  
+Join Freeverse  
+</button>  </div>  </section>  <!-- FOOTER -->  <footer>  <div>  <h2>FREEVERSE</h2>  <p>  
+Freelancing Club for students interested in technology,  
+design, creativity and professional growth.  
+</p>  </div>  <div>  <h2>Explore</h2>  <p>Events • Gallery • Freelancers • Coordinators</p>  </div>  <div class="copyright">  <p>  
+© 2026 Freeverse Freelancing Club. All Rights Reserved.  
+</p>  </div>  </footer>  <!-- LOGIN MODAL -->  <div class="modal" id="loginModal">  <div class="modal-box">  <button class="close-btn" onclick="closeModal('loginModal')">  
+×  
+</button>  <h2>Welcome Back</h2>  <p>Sign in to your Freeverse account.</p>  <form id="loginForm">  <label for="loginEmail">Email</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Enter your email"
+required
+
+> 
+
+<label for="loginPassword">Password</label>
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+required
+
+> 
+
+<button type="submit" class="modal-submit">  
+Sign In  
+</button>  <p class="switch-text">  
+Don't have an account?  
+<button type="button" onclick="switchToRegister()">  
+Register  
+</button>  
+</p>  </form>  </div>  </div>  <!-- REGISTER MODAL -->  <div class="modal" id="registerModal">  <div class="modal-box">  <button class="close-btn" onclick="closeModal('registerModal')">  
+×  
+</button>  <h2>Create Account</h2>  <p>Join the Freeverse student community.</p>  <form id="registerForm">  <label for="regName">Name</label>
+
+<input
+type="text"
+id="regName"
+placeholder="Enter your name"
+required
+
+> 
+
+<label for="regEmail">Email</label>
+
+<input
+type="email"
+id="regEmail"
+placeholder="Enter your email"
+required
+
+> 
+
+<label for="regPassword">Password</label>
+
+<input
+type="password"
+id="regPassword"
+placeholder="Minimum 6 characters"
+required
+
+> 
+
+<label for="regYear">Year</label>
+
+<select id="regYear" required>  <option value="">Select Year</option>  
+<option value="1st Year">1st Year</option>  
+<option value="2nd Year">2nd Year</option>  
+<option value="3rd Year">3rd Year</option>  
+<option value="4th Year">4th Year</option>  </select>  <label for="regDepartment">Department</label>
+
+<select id="regDepartment" required>  <option value="">Select Department</option>  
+<option value="CSE">CSE</option>  
+<option value="CSE (AI&ML)">CSE (AI&ML)</option>  
+<option value="IT">IT</option>  
+<option value="Cyber Security">Cyber Security</option>  
+<option value="AI & DS">AI & DS</option>  
+<option value="Civil">Civil</option>  
+<option value="Mechanical">Mechanical</option>  
+<option value="ECE">ECE</option>  
+<option value="EEE">EEE</option>  </select>  <button type="submit" class="modal-submit">  
+Register  
+</button>  <p class="switch-text">  
+Already have an account?  
+<button type="button" onclick="switchToLogin()">  
+Sign In  
+</button>  
+</p>  </form>  </div>  </div>  <!-- EVENT MODAL -->  <div class="modal" id="eventModal">  <div class="modal-box detail-box">  <button class="close-btn" onclick="closeModal('eventModal')">  
+×  
+</button>  <div id="eventDetails"></div>  </div>  </div>  <!-- PROFILE MODAL -->  <div class="modal" id="profileModal">  <div class="modal-box detail-box">  <button class="close-btn" onclick="closeModal('profileModal')">  
+×  
+</button>  <div id="profileDetails"></div>  </div>  </div>  <!-- LIGHTBOX -->  <div class="lightbox" id="lightbox">  <button
+class="lightbox-prev"
+onclick="previousPhoto()"
+aria-label="Previous photo"
+
+> 
+
+‹
+</button>
+
+<button
+class="lightbox-close"
+onclick="closeLightbox()"
+aria-label="Close photo"
+
+> 
+
+×
+</button>
+
+<img id="lightboxImage" src="" alt="Gallery Preview">  <button
+class="lightbox-next"
+onclick="nextPhoto()"
+aria-label="Next photo"
+
+> 
+
+›
+</button>
+
+</div>  <!-- TOAST -->  <div class="toast" id="toast">  <div class="toast-icon">✓</div>  <span id="toastMessage"></span>
+
+</div>  <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- EDIT NEWS MODAL -->
+<div id="editNewsModal" class="edit-news-modal">
+
+  <div class="edit-news-box">
+
+    <button
+      type="button"
+      class="edit-news-close"
+      onclick="closeEditNewsModal()"
+    >
+      ×
+    </button>
+
+    <div class="edit-news-header">
+      <span>Edit Update</span>
+      <h2>Edit FREEVERSE News</h2>
+      <p>Update the post details and replace the poster if needed.</p>
+    </div>
+
+    <form id="editNewsForm">
+
+      <input
+        type="hidden"
+        id="editNewsId"
+      >
+
+      <div class="form-group">
+
+        <label for="editPostTitle">
+          Post Title
+        </label>
+
+        <input
+          type="text"
+          id="editPostTitle"
+          required
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="editPostType">
+          Category
+        </label>
+
+        <select
+          id="editPostType"
+          required
+        >
+
+          <option value="announcement">
+            Announcement
+          </option>
+
+          <option value="event">
+            Event
+          </option>
+
+          <option value="achievement">
+            Achievement
+          </option>
+
+          <option value="spotlight">
+            Student Spotlight
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="editPostDescription">
+          Description
+        </label>
+
+        <textarea
+          id="editPostDescription"
+          rows="5"
+          required
+        ></textarea>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          Current Poster / Photo
+        </label>
+
+        <div
+          id="editCurrentImage"
+          class="edit-current-image"
+        ></div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="editPostImage">
+          Replace Poster / Photo
+        </label>
+
+        <input
+          type="file"
+          id="editPostImage"
+          accept="image/png,image/jpeg,image/jpg,image/webp"
+        >
+
+        <div
+          id="editImagePreview"
+          class="edit-image-preview"
+        ></div>
+
+      </div>
+
+      <div class="edit-news-actions">
+
+        <button
+          type="button"
+          class="edit-cancel-btn"
+          onclick="closeEditNewsModal()"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="edit-save-btn"
+        >
+          Save Changes
+        </button>
+
+      </div>
+
+      <div
+        id="editNewsMessage"
+        class="edit-news-message"
+      ></div>
+
+    </form>
+
+  </div>
+
+</div> </body>  
+</html>
